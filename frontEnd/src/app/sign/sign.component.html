@@ -1,0 +1,39 @@
+<form id="signForm" [formGroup]="signUpForm" autocomplete="off">
+    <h1 >Sign Up</h1>
+
+      
+      <label for="username">Name: </label>
+      <input id="username" type="text" formControlName="name">
+
+      <label for="email">Email: </label>
+      <input id="email" type="email" formControlName="email" >
+
+      <label for="password">password: </label>
+      <input id="password" type="password" formControlName="password">
+
+      <label for="mobile">mobile: </label>
+      <input id="mobile" type="text" formControlName="phone">
+
+      <h5> Billing Address</h5>
+
+      <label for="hNo">House/Flat No: </label>
+      <input id="hNo" type="text" formControlName="hNo">
+
+      
+
+      <label for="area">Area: </label>
+      <input id="area" type="text" formControlName="area">
+
+      <label for="city">City: </label>
+      <input id="city" type="text" formControlName="city">
+
+      <label for="state">State </label>
+      <input id="state" type="text" formControlName="state">
+
+      <label for="pincode">Pincode: </label>
+      <input id="pincode" type="text" formControlName="pincode">
+
+      
+      <button class="btn btn-success" type="submit" (click)="onSubmit()">SIGN UP!</button>
+    
+    </form>

@@ -1,0 +1,137 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a href="/" class="navbar-brand">Admin</a>
+    <form class="form-inline" style="display: flex;flex-direction: row; justify-content: space-around;">
+       
+      <button (click)="signOut()" class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 4px; margin-right: 20px;" type="submit">Sign out</button>
+    </form>
+  </nav>
+
+  <div *ngIf="displayButtons" style="display: flex; flex-direction: column; max-width: 200px; margin: auto;margin-top: 100px; ">
+      <button style="margin-bottom: 10px;" class="btn btn-success" (click)="displayButtons=false;addProduct=true">Add Product</button>
+      <button style="margin-bottom: 10px;" class="btn btn-primary" (click)="displayButtons=false">View Users</button>
+      <button  class="btn btn-danger" (click)="displayButtons=false;viewProducts=true;onViewProducts()">View Products</button>
+  </div>
+
+  <div *ngIf="viewProducts">
+
+    <ng-container *ngFor="let i of allProducts">
+            
+      <div class="card col-md-3">
+          <img id="Pimg" src="{{i.image}}" alt="{{i.name}}">
+          <h4 id="Pname">{{i.name}}</h4>
+          <p id="pdesc">{{i.description}}</p>
+          <span id="price">₹{{i.price}}</span>
+
+      
+          
+          
+          <button (click)="edit(i)" type="submit" >
+             Edit</button>
+             <button (click)="delete(i._id)" type="submit" >
+              Delete</button>
+
+
+             
+      </div>
+ 
+  
+
+ 
+</ng-container>
+
+  </div>
+
+  <div *ngIf="editFormDiv">
+
+    <form id="editForm" [formGroup]="editForm">
+      <h3 >Edit Product</h3>
+
+      <label for="name">Product Name: </label>
+      <input type="text" name="name" required formControlName="name"  >
+      <label for="description">Description: </label>
+      <input type="text" name="description" required formControlName="description" >
+      <label for="richD">Rich Description: </label>
+      <textarea  cols="3" name="richD" placeholder="Enter more description here" formControlName="richDescription"></textarea>
+      <label for="image">Image details: </label>
+      <input type="text" required formControlName="image" placeholder="Paste img src here" >
+      
+
+      <select  formControlName="category" name="category">
+          <option value="">Select Category</option>
+          <option *ngFor="let i of categories" value="{{i.name}}">{{i.name}}</option>
+       
+      </select>
+
+      <label for="brand">Brand: </label>
+
+      <input type="text" formControlName="brand">
+
+      <input id="count" formControlName="countInStock" type="number" placeholder="Count in Stock" required >
+
+      <select name="isFeatured" formControlName="isFeatured" >
+          <option value="">Is Featured?</option>
+          <option value="yes">Yes</option>
+          <option value="np">No</option>
+
+      </select>
+
+      <label for="price">Price</label>
+      <input type="text" required formControlName="price" >
+
+<button class="btn btn-success"type="submit" (click)="onEditProduct(editProduct._id)">Edit Product</button>
+
+    </form>
+    
+  </div>
+
+
+  <div *ngIf="addProduct">
+
+    <div style="margin:auto">
+        
+    </div>
+    
+      <form id="addProductForm" [formGroup]="addProductForm">
+        <h3 >Add Product</h3>
+
+        <label for="name">Product Name: </label>
+        <input type="text" name="name" required formControlName="name" >
+        <label for="description">Description: </label>
+        <input type="text" name="description" required formControlName="description" >
+        <label for="richD">Rich Description: </label>
+        <textarea  cols="3" name="richD" placeholder="Enter more description here" formControlName="richDescription"></textarea>
+        <label for="image">Image details: </label>
+        <input type="text" required formControlName="image" placeholder="Paste img src here" >
+        
+
+        <select  formControlName="category" name="category">
+            <option value="">Select Category</option>
+            <option *ngFor="let i of categories" value="{{i.name}}">{{i.name}}</option>
+         
+        </select>
+
+        <label for="brand">Brand: </label>
+
+        <input type="text" formControlName="brand">
+
+        <input id="count" formControlName="countInStock" type="number" placeholder="Count in Stock" required >
+
+        <select name="isFeatured" formControlName="isFeatured" >
+            <option value="">Is Featured?</option>
+            <option value="yes">Yes</option>
+            <option value="np">No</option>
+
+        </select>
+
+        <label for="price">Price</label>
+        <input type="text" required formControlName="price" >
+
+ <button class="btn btn-success"type="submit" (click)="onSubmitProduct()">Add Product</button>
+
+      </form>
+  </div>
+
+
+
+
+  

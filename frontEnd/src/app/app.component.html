@@ -1,0 +1,17 @@
+<div class="conatainer" *ngIf=appComp>
+  <div class="form">
+    <button class="btn-primary log" (click)="naviLogin();appComp=false">
+      login
+    </button>
+  
+    <button class="btn-primary sign" (click)="naviSign();appComp=false">
+      sign-up
+    </button>
+  </div>
+  
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>

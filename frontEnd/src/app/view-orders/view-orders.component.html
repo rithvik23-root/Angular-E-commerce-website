@@ -1,0 +1,49 @@
+
+<div style="margin-top: 30px;">
+    <ng-container *ngIf="userOrders.length!=0" >
+
+        <button (click)="back()" class="btn btn-primary">Back to Shopping</button>
+    
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    
+                    <th>Date Ordered</th>
+                    <th>Expected delivery Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of userOrders">
+                    
+                    <td>{{item.orderedItem.name}}</td>
+                    <td><img style="width: 120px;" src="{{item.orderedItem.image}}" ></td>
+                    <td style="width: 25%;">{{item.orderedItem.description}}</td>
+                    <th style="width: 12%;">₹{{item.orderedItem.price}}</th>
+                    
+    
+    
+                    <td style="width: 12%;">{{item.dateOrdered}}</td>
+                    <td style="width: 12%;">{{item.deliveryDate}}</td>
+                    
+                    
+                    
+                    
+                </tr>
+                
+               
+            </tbody>
+        </table>
+    
+    </ng-container>
+</div>
+
+
+
+<ng-container *ngIf="userOrders.length==0">
+<h1>No orders Yet</h1>
+</ng-container>

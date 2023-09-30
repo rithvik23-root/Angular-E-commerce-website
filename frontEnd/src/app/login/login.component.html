@@ -1,0 +1,9 @@
+<form id="logForm"  [formGroup]="loginForm" autocomplete="off">
+    <h1>Login!</h1>
+    <label for="email">Email: </label>
+    <input type="text" name="email" required formControlName="email">
+    <label for="password">Password:</label>
+    <input type="password" name="password" required formControlName="password">
+    <button class="btn btn-primary" type="submit" (click)="onLogin()">LOGIN!</button>
+</form>
+

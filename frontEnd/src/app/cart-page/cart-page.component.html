@@ -1,0 +1,63 @@
+
+
+<ng-container *ngIf="cart.length!=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                           
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cart;let i=index">
+                            
+                            <td>{{item.name}}<br><button (click)="removeFromCart(i)" style="margin-top:30px" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
+                            <td><img style="width: 120px;"  src="{{item.image}}" ></td>
+                            <td style="width: 25%;">{{item.description}}</td>
+                            <th style="width: 12%;">₹{{item.price}}</th>
+                            
+                           
+                        
+                            
+                            
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td><button class="btn btn-primary">Back to shopping</button></td>
+                            <td><button (click)="checkout()" class="btn btn-success">Checkout</button></td>
+                            <td><strong> Total : ₹{{getTotalAmount()}}</strong></td>
+                        </tr> -->
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<div *ngIf="cart.length!=0" style="float: right; width: 400px;padding-bottom: 50px; background: rgb(243, 245, 142,0.4);border-radius: 10px;overflow: auto;margin-bottom: 50px;">
+    <form style="display: flex;flex-direction: column;justify-content: center; width: 80%;margin-left: 50px;margin-top: 50px;">
+        <h3>Checkout</h3>
+        <h5>Total Price:  <button  (click)="checkout()" class="btn btn-outline-danger">Pay ₹{{getTotalAmount()}}</button> </h5>
+        <h6>Or,</h6>
+        <button (click)="goBack()" class="btn btn-outline-primary">Continue Shopping</button>
+    </form>
+</div>
+
+<div style="width: 40%;text-align: center;margin-top: 100px;margin-left: 400px;padding-top: 50px;padding-bottom: 50px;background: rgb(243, 245, 142,0.4);border-radius: 10px; "*ngIf="cart.length==0">
+    <ng-container  >
+        <h1>Your Cart is Empty:(</h1>
+        <button class="btn btn-outline-primary" (click)="goBack()">Continue Shopping</button>
+    </ng-container>
+</div>

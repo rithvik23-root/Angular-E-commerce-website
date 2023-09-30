@@ -1,0 +1,43 @@
+
+<div id="div" *ngIf="shipping" >
+  <form id="form" [formGroup]="shippingForm">
+    <h3>Shipping Address</h3>
+    <label for="hNo">House/Flat No: </label>
+      <input id="hNo" type="text" formControlName="hNo">
+
+      
+
+      <label for="area">Area: </label>
+      <input id="area" type="text" formControlName="area">
+
+      <label for="city">City: </label>
+      <input id="city" type="text" formControlName="city">
+
+      <label for="state">State </label>
+      <input id="state" type="text" formControlName="state">
+
+      <label for="pincode">Pincode: </label>
+      <input id="pincode" type="text" formControlName="pincode">
+
+      
+      <button class="btn btn-outline-success" (click)="onSubmit();shipping=false;conf=true" type="submit" >Place Order!</button>
+</form>
+
+</div>
+
+
+
+
+  <div style="width: 40%;text-align: center;margin-left: 370px;padding-top: 50px;padding-bottom: 50px;border-radius: 10px;" *ngIf="conf" id="conf">
+    <div style="margin-left: 25px;">
+      <img width="60%" src="https://dealsnaijashop.com/wp-content/uploads/2020/09/icon_confirmation-1.gif">
+    </div>
+    
+    
+
+    <button class="btn btn-success" (click)="onView()">View Orders</button>
+     
+</div>
+
+   
+

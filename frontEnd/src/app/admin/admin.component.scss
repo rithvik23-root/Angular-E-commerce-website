@@ -1,0 +1,117 @@
+#addProductForm{
+    display: flex;
+    flex-direction: column;
+    max-width:40%;
+    margin: auto;
+
+    input{
+        max-width: 40%;
+
+        
+    }
+
+    label{
+        margin-top: 10px;
+    }
+
+    select{
+        margin-top: 20px;
+    }
+
+    #count{
+        margin-top: 10px;
+    }
+
+    button{
+        margin-top: 20px;
+    }
+    
+}
+
+#editForm{
+    display: flex;
+    flex-direction: column;
+    max-width:40%;
+    margin: auto;
+
+    input{
+        max-width: 40%;
+
+        
+    }
+
+    label{
+        margin-top: 10px;
+    }
+
+    select{
+        margin-top: 20px;
+    }
+
+    #count{
+        margin-top: 10px;
+    }
+
+    button{
+        margin-top: 20px;
+    }
+    
+}
+
+
+.card{
+    margin: 50px;
+   
+    
+
+    button{
+       width: 50%;
+       margin-left: 80px;
+       margin-bottom: 15px;
+       background: rgb(238, 211, 136);
+       font-family: sans-serif;
+       border:transparent;
+       border-radius: 10px;
+      
+       
+    }
+    
+}
+
+
+
+
+
+    #Pimg{
+       
+    box-sizing: border-box;
+    margin: 0;
+    height: 80%;
+    width: 60%;
+    
+    padding: 10px 0;
+    margin-left: 50px;
+       
+    
+    
+    }
+
+    #Pname{
+        border-top: 1px solid #ccc;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    
+    text-align: left;
+    margin: 5px 15px;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: unset;
+    padding-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    }
